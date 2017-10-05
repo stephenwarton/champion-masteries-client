@@ -18,7 +18,7 @@ npm start
 ```
 Say yes for the next prompt to run the client on another port and you're good to go.
 
-If for some reason you need to run the server on a different port, you'll need to change this line: [](https://github.com/stephenwarton/champion-masteries-client/blob/master/src/App.js#L8)
+If for some reason you need to run the server on a different port, you'll need to change this line: [link](https://github.com/stephenwarton/champion-masteries-client/blob/master/src/App.js#L8)
 
 ## Built With
 
