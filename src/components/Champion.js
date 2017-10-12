@@ -16,7 +16,7 @@ class Champion extends Component {
   render() {
     return (
       <span>
-          <img className="icon" src={`https://ddragon.leagueoflegends.com/cdn/7.19.1/img/champion/${this.props.champion.key}.png`} alt={this.props.champion.key} onClick={this.handleClick} data-toggle="modal" data-target={`#${this.props.champion.key}`}/>
+          <img className="icon" src={`https://ddragon.leagueoflegends.com/cdn/7.20.2/img/champion/${this.props.champion.key}.png`} alt={this.props.champion.key} onClick={this.handleClick} data-toggle="modal" data-target={`#${this.props.champion.key}`}/>
           <div className="modal fade" id={this.props.champion.key} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div className="modal-dialog" role="document">
               <div className="modal-content">
@@ -27,7 +27,7 @@ class Champion extends Component {
                   <div className="container-fluid">
                     <div className="row">
                       <div className="col-md-6">
-                        <img className="loading" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${this.props.champion.key}_0.jpg`} alt={this.props.champion.key} />
+                        <img className="loading" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading//${this.props.champion.key}_0.jpg`} alt={this.props.champion.key} />
                       </div>
                       <div className="col-md-6 modalBody">
                         <h3 className="modal-title" id="myModalLabel">{this.props.champion.name}</h3>
