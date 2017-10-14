@@ -4,8 +4,10 @@ import Navbar from './components/Navbar';
 import ChampionsContainer from './components/ChampionsContainer';
 import Dropdown from './components/Dropdown';
 import * as helpers from './helpers';
+const loading = require('./loading.gif');
 
-let URL = 'http://localhost:3000/api/v1/mastery';
+//let URL = 'http://localhost:3000/api/v1/mastery';
+let URL = 'https://champion-masteries.herokuapp.com/api/v1/mastery';
 
 class App extends Component {
   constructor(props){
@@ -18,11 +20,17 @@ class App extends Component {
       user: {},
       masteries: [],
       fetched: false,
-      option: 'Mastery Points'
+      option: 'Mastery Points',
+      loading: false,
+      header: 'Welcome'
     }
   }
 
   handleSubmit(name){
+    this.setState({
+      loading:true,
+      header: 'Loading'
+    });
     axios.post(URL, {
         name
       })
@@ -31,7 +39,9 @@ class App extends Component {
         this.setState({
           user: response.data.user,
           masteries: response.data.masteries,
-          fetched: true
+          fetched: true,
+          loading: false,
+          header: 'Welcome'
         })
       })
       .catch(error => {
@@ -49,6 +59,18 @@ class App extends Component {
         <Navbar handleSubmit={this.handleSubmit}/>
         <div className="container">
           {
+            !this.state.fetched || this.state.loading
+            ? <h2>{this.state.header}</h2>
+            : null
+          }
+          {
+            this.state.loading
+            ? <div>
+                <img className="loading-gif" src={loading} alt="loading gif" />
+              </div>
+            : null
+          }
+          {
             this.state.fetched
             ? <div>
                 <h2>{this.state.user.name} <img className="profileIcon" src={`https://ddragon.leagueoflegends.com/cdn/7.19.1/img/profileicon/${this.state.user.icon}.png`} alt={this.state.user.icon}/></h2>
@@ -63,8 +85,8 @@ class App extends Component {
                 </div>
                 <ChampionsContainer masteries={this.state.masteries} filterOption={this.state.option}/>
               </div>
-            : <h2>Welcome</h2>
-          }
+            : null
+            }
           <div className="footer"><small>Made by Stephen W.</small></div>
         </div>
       </div>
