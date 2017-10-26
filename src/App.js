@@ -15,6 +15,7 @@ class App extends Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 
     this.state = {
       user: {},
@@ -22,7 +23,8 @@ class App extends Component {
       fetched: false,
       option: 'Mastery Points',
       loading: false,
-      header: 'Welcome'
+      header: 'Welcome',
+      champName: ''
     }
   }
 
@@ -53,6 +55,10 @@ class App extends Component {
     this.setState({option: option});
   }
 
+  handleChange(e){
+    this.setState({champName: e.target.value});
+  }
+
   render() {
     return (
       <div>
@@ -76,14 +82,17 @@ class App extends Component {
                 <h2>{this.state.user.name} <img className="profileIcon" src={`https://ddragon.leagueoflegends.com/cdn/7.19.1/img/profileicon/${this.state.user.icon}.png`} alt={this.state.user.icon}/></h2>
                 <h4>Mastery Level: {helpers.format(this.state.user.masteryLevel)}</h4>
                 <div className="row">
-                  <div className="col-md-8">
+                  <div className="col-md-4">
                     <h4>Total Mastery Points: {helpers.format(this.state.user.points)}</h4>
+                  </div>
+                  <div className="col-md-4 form-group">
+                    <input type="text" className="form-control" placeholder="Champion Name" value={this.state.champName} onChange={this.handleChange} />
                   </div>
                   <div className="col-md-4 container">
                     <Dropdown handleSelectChange={this.handleSelectChange}/>
                   </div>
                 </div>
-                <ChampionsContainer masteries={this.state.masteries} filterOption={this.state.option}/>
+                <ChampionsContainer masteries={this.state.masteries} champName={this.state.champName} filterOption={this.state.option}/>
               </div>
             : null
             }
