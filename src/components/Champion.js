@@ -27,7 +27,7 @@ class Champion extends Component {
                   <div className="container-fluid">
                     <div className="row">
                       <div className="col-md-6">
-                        <img className="loading" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading//${this.props.champion.key}_0.jpg`} alt={this.props.champion.key} />
+                        <img className="loading" src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${this.props.champion.key}_0.jpg`} alt={this.props.champion.key} />
                       </div>
                       <div className="col-md-6 modalBody">
                         <h3 className="modal-title" id="myModalLabel">{this.props.champion.name}</h3>
