@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as helpers from '../helpers';
 
+let version = "7.23.1";
+
 class Champion extends Component {
   constructor(props){
     super(props);
@@ -16,7 +18,7 @@ class Champion extends Component {
   render() {
     return (
       <span>
-          <img className="icon" src={`https://ddragon.leagueoflegends.com/cdn/7.20.3/img/champion/${this.props.champion.key}.png`} alt={this.props.champion.key} onClick={this.handleClick} data-toggle="modal" data-target={`#${this.props.champion.key}`}/>
+          <img className="icon" src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${this.props.champion.key}.png`} alt={this.props.champion.key} onClick={this.handleClick} data-toggle="modal" data-target={`#${this.props.champion.key}`}/>
           <div className="modal fade" id={this.props.champion.key} tabIndex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div className="modal-dialog" role="document">
               <div className="modal-content">

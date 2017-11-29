@@ -8,6 +8,7 @@ const loading = require('./loading.gif');
 
 //let URL = 'http://localhost:3000/api/v1/mastery';
 let URL = 'https://champion-masteries.herokuapp.com/api/v1/mastery';
+let version = "7.23.1";
 
 class App extends Component {
   constructor(props){
@@ -79,7 +80,7 @@ class App extends Component {
           {
             this.state.fetched
             ? <div>
-                <h2>{this.state.user.name} <img className="profileIcon" src={`https://ddragon.leagueoflegends.com/cdn/7.20.3/img/profileicon/${this.state.user.icon}.png`} alt={this.state.user.icon}/></h2>
+                <h2>{this.state.user.name} <img className="profileIcon" src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${this.state.user.icon}.png`} alt={this.state.user.icon}/></h2>
                 <h4>Mastery Level: {helpers.format(this.state.user.masteryLevel)}</h4>
                 <div className="row">
                   <div className="col-md-4">
