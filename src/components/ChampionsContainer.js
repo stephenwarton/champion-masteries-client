@@ -7,12 +7,16 @@ class ChampionsContainer extends Component {
     let champions = this.props.masteries;
     champions = helpers.sort(champions, this.props.filterOption);
     champions = champions.filter(champion => {
-      return champion.name.toLowerCase().indexOf(this.props.champName.toLowerCase()) !== -1;
-    })
+      return (
+        champion.name
+          .toLowerCase()
+          .indexOf(this.props.champName.toLowerCase()) !== -1
+      );
+    });
     return (
-      <div>
+      <div className="champContainer">
         {champions.map(champion => {
-          return <Champion key={champion.key} champion={champion} />
+          return <Champion key={champion.key} champion={champion} />;
         })}
       </div>
     );

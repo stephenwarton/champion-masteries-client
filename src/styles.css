@@ -3,7 +3,7 @@
 }
 
 .icon {
-  margin: .1em;
+  margin: 0.1em;
   height: 7em;
   cursor: pointer;
 }
@@ -15,7 +15,7 @@
 
 .select {
   width: 75%;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .loading {
@@ -24,4 +24,14 @@
 
 .loading-gif {
   height: 25em;
+}
+
+.champContainer {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(auto-fit, 100px);
+}
+
+.champName {
+  text-align: center;
 }

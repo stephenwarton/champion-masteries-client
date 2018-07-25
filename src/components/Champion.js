@@ -28,6 +28,7 @@ class Champion extends Component {
           data-toggle="modal"
           data-target={`#${this.props.champion.key}`}
         />
+        <div className="champName">{this.props.champion.name}</div>
         <div
           className="modal fade"
           id={this.props.champion.key}
