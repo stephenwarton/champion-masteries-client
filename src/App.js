@@ -7,7 +7,7 @@ import * as helpers from './helpers';
 
 //let URL = 'http://localhost:3000/api/v1/mastery';
 let URL = 'https://champion-masteries.herokuapp.com/api/v1/mastery';
-let version = '8.14.1';
+let version = '8.17.1';
 
 class App extends Component {
   constructor(props) {

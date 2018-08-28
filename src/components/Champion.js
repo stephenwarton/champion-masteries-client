@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as helpers from '../helpers';
 
-let version = '8.14.1';
+let version = '8.17.1';
 
 class Champion extends Component {
   constructor(props) {
